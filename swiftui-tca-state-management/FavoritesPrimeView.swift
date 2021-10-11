@@ -13,13 +13,22 @@ struct FavoritesPrimeView: View {
     
     var body: some View {
         VStack {
-            List(state.favoritePrimes, id: \.self) { value in
-                Text("\(value)")
+            List {
+                ForEach(state.favoritePrimes, id: \.self) { value in
+                    Text("\(value)")
+                }
+                .onDelete(perform: delete)
             }
             .listStyle(PlainListStyle())
         }
         .navigationTitle("Favorite Primes")
         .preferredColorScheme(.dark)
+    }
+    
+    private func delete(offsets: IndexSet) {
+        for index in offsets {
+            state.favoritePrimes.remove(at: index)
+        }
     }
 }
 
