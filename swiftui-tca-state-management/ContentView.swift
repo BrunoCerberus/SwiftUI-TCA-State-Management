@@ -20,11 +20,11 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                NavigationLink(destination: CounterView(state: state)) {
+                NavigationLink(destination: CounterView(state: state).ignoresSafeArea()) {
                     Text("Counter demo")
                 }
                 
-                NavigationLink(destination: EmptyView()) {
+                NavigationLink(destination: EmptyView().ignoresSafeArea()) {
                     Text("Favorite primes")
                 }
             }
@@ -34,6 +34,7 @@ struct ContentView: View {
             .listStyle(PlainListStyle())
             .navigationTitle("State Management")
         }
+        .preferredColorScheme(.dark)
     }
 }
 
