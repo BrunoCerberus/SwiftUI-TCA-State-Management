@@ -18,7 +18,7 @@ import Combine
 final class AppState: ObservableObject {
     let objectWillChange = ObservableObjectPublisher()
     
-    //note that @Published property wrapper wrapp all this implementation for you
+    //note that @Published property wrapper wrapps all this implementation for you
     var count = 0 {
         willSet { self.objectWillChange.send() }
     }
