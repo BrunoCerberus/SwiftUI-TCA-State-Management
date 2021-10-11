@@ -16,6 +16,8 @@ struct ContentView: View {
     //reload the whole structure and stack of views
     
     @ObservedObject var state: AppState = AppState()
+    static var wolframAlphaApiKey: String = "6H69Q3-828TKQJ4EP"
+
     
     var body: some View {
         NavigationView {

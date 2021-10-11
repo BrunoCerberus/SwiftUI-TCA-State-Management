@@ -14,6 +14,7 @@
 		15F0635B2713D90A0038582A /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F0635A2713D90A0038582A /* CounterView.swift */; };
 		15F0635D2713E44E0038582A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F0635C2713E44E0038582A /* AppState.swift */; };
 		15F0635F271488290038582A /* IsPrimeModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F0635E271488290038582A /* IsPrimeModalView.swift */; };
+		15F0636227148F130038582A /* WolframAlphaResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F0636127148F130038582A /* WolframAlphaResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		15F0635A2713D90A0038582A /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		15F0635C2713E44E0038582A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		15F0635E271488290038582A /* IsPrimeModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsPrimeModalView.swift; sourceTree = "<group>"; };
+		15F0636127148F130038582A /* WolframAlphaResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WolframAlphaResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		15F0634B2713D40C0038582A /* swiftui-tca-state-management */ = {
 			isa = PBXGroup;
 			children = (
+				15F0636027148F070038582A /* Model */,
 				15F0634C2713D40C0038582A /* swiftui_tca_state_managementApp.swift */,
 				15F0634E2713D40C0038582A /* ContentView.swift */,
 				15F063502713D40D0038582A /* Assets.xcassets */,
@@ -74,6 +77,14 @@
 				15F063532713D40D0038582A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		15F0636027148F070038582A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				15F0636127148F130038582A /* WolframAlphaResult.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15F0636227148F130038582A /* WolframAlphaResult.swift in Sources */,
 				15F0635F271488290038582A /* IsPrimeModalView.swift in Sources */,
 				15F0634F2713D40C0038582A /* ContentView.swift in Sources */,
 				15F0634D2713D40C0038582A /* swiftui_tca_state_managementApp.swift in Sources */,
