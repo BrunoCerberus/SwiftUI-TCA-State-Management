@@ -14,7 +14,9 @@ struct CounterView: View {
     // this propertie wrapper only updates its view when value changed but not persists value
 //    @State var count: Int = 0
     @ObservedObject var state: AppState
+    
     @State var showPrimeSheet: Bool = false
+    @State var showAlert: Bool = false
     
     var body: some View {
         VStack {
@@ -34,7 +36,7 @@ struct CounterView: View {
             Button(action: { showPrimeSheet.toggle() }) {
                 Text("Is this prime?")
             }
-            Button(action: {}) {
+            Button(action: { showAlert.toggle() }) {
                 Text("What is the \(ordinal(state.count)) prime?")
             }
         }
@@ -42,6 +44,9 @@ struct CounterView: View {
         .navigationTitle("Counter demo")
         .sheet(isPresented: $showPrimeSheet) {
             IsPrimeModalView(count: $state.count, favoritePrimes: $state.favoritePrimes)
+        }
+        .alert("Title", isPresented: $showAlert) {
+            EmptyView()
         }
     }
     
