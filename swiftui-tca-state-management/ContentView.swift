@@ -26,7 +26,7 @@ struct ContentView: View {
                     Text("Counter demo")
                 }
                 
-                NavigationLink(destination: EmptyView().ignoresSafeArea()) {
+                NavigationLink(destination: FavoritesPrimeView(state: state).ignoresSafeArea()) {
                     Text("Favorite primes")
                 }
             }

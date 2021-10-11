@@ -18,11 +18,14 @@ struct IsPrimeModalView: View {
                 Text("\(count) is prime 🎉")
                 
                 if favoritePrimes.contains(count) {
-                    Button(action: {}) {
+                    Button(action: {
+                        guard let index: Int = favoritePrimes.firstIndex(of: count) else { return }
+                        favoritePrimes.remove(at: index)
+                    }) {
                         Text("Remove from favorite primes")
                     }
                 } else {
-                    Button(action: {}) {
+                    Button(action: { favoritePrimes.append(count) }) {
                         Text("Save to favorite primes")
                     }
                 }
