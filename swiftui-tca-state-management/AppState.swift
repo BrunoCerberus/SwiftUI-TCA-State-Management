@@ -6,6 +6,7 @@
 //
 
 import Combine
+import Foundation
 
 //@ObservedObject - must perform ObservableObject protocol and updates any View that is subscribed to any of its value and hold any information across the Views
 
@@ -26,4 +27,23 @@ final class AppState: ObservableObject {
     var favoritePrimes: [Int] = [] {
         willSet { self.objectWillChange.send() }
     }
+    
+    @Published var loggedInUser: User?
+    @Published var activityFeed: [Activity] = []
+    
+    struct Activity {
+        let timestamp: Date
+        let type: ActivityType
+
+        enum ActivityType {
+          case addedFavoritePrime(Int)
+          case removedFavoritePrime(Int)
+        }
+      }
+
+      struct User {
+        let id: Int
+        let name: String
+        let bio: String
+      }
 }

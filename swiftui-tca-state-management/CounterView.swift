@@ -17,6 +17,7 @@ struct CounterView: View {
     
     @State var showPrimeSheet: Bool = false
     @State var alertNthPrime: PrimeAlert?
+    @State var isNthPrimeButtonDisabled: Bool = false
     
     var body: some View {
         VStack {
@@ -37,13 +38,16 @@ struct CounterView: View {
                 Text("Is this prime?")
             }
             Button(action: {
+                isNthPrimeButtonDisabled = true
                 nthPrime(state.count) { prime in
+                    isNthPrimeButtonDisabled = false
                     guard let prime: Int = prime else { return }
                     self.alertNthPrime = PrimeAlert(prime: prime)
                 }
             }) {
                 Text("What is the \(ordinal(state.count)) prime?")
             }
+            .disabled(isNthPrimeButtonDisabled)
         }
         .font(.title)
         .navigationTitle("Counter demo")
