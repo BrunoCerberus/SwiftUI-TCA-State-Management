@@ -34,16 +34,16 @@ final class AppState: ObservableObject {
     struct Activity {
         let timestamp: Date
         let type: ActivityType
-
+        
         enum ActivityType {
-          case addedFavoritePrime(Int)
-          case removedFavoritePrime(Int)
+            case addedFavoritePrime(Int)
+            case removedFavoritePrime(Int)
         }
-      }
-
-      struct User {
+    }
+    
+    struct User {
         let id: Int
         let name: String
         let bio: String
-      }
+    }
 }
